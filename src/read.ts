@@ -8,16 +8,12 @@ const options: IClientOptions = {
   port: env<number>("MQTT_PORT"),
   username: env("MQTT_USERNAME"),
   password: env("MQTT_PASSWORD"),
-  clientId:
-    "mqttjs_" +
-    Math.random()
-      .toString(16)
-      .substr(2, 8),
-  keepalive: 60,
+  clientId: "kizza-klient",
+  keepalive: 60 * 10,
   reconnectPeriod: 1000,
   protocolId: "MQIsdp",
   protocolVersion: 3,
-  clean: true
+  clean: false
 };
 
 export type Client = {
